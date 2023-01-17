@@ -16,6 +16,8 @@ Demo showing 3 LEDs connected to an Arudino microcontroller blinking randomly.
 
 The circuit is is powered via USB connected to the Arudino microcontroller. The red, green, and blue LEDs are connected to pin 2, 3, and 4 respectively. Each LED is connected in series with a resistor to reduce the current through the LED.
 
+![Circuit photo]({{site.baseurl}}/assets/hw1_circuit_photo.jpeg){: width="80%"}
+
 
 ## Calculating resistor values
 Because each LED used in this assignment can operate safely with $\leq 30 \text{mA}$ of current, we need to use resisters to reduce the amount of current going through each LED.
