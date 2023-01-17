@@ -8,7 +8,7 @@ categories: jekyll update
 ## Demo
 ![Demo video for 3 LEDs blinking randomly]({{site.baseurl}}/assets/hw1_demo.gif){: width="75%"}
 
-Demo showing 3 LEDs connected to an Arudino microcontroller blinked randomly.
+Demo showing 3 LEDs connected to an Arudino microcontroller blinking randomly.
 
 
 ## Circuit drawing
