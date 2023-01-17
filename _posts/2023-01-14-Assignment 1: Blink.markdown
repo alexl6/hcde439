@@ -6,13 +6,13 @@ categories: jekyll update
 ---
 
 ## Demo
-![Demo video for 3 LEDs blinking randomly](/assets/hw1_demo.gif){: width="75%"}
+![Demo video for 3 LEDs blinking randomly]({{site.baseurl}}/assets/hw1_demo.gif){: width="75%"}
 
 Demo showing 3 LEDs connected to an Arudino microcontroller blinked randomly.
 
 
 ## Circuit drawing
-![Circuit drawing](/assets/hw1_circuit.png){: width="80%"}
+![Circuit drawing]({{site.baseurl}}/assets/hw1_circuit.png){: width="80%"}
 
 The circuit is is powered via USB connected to the Arudino microcontroller. The red, green, and blue LEDs are connected to pin 2, 3, and 4 respectively. Each LED is connected in series with a resistor to reduce the current through the LED.
 

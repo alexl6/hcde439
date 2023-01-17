@@ -8,7 +8,7 @@ Hi there!
 
 I'm Alex. This is my project page for [HCDE 439: Physical Computing](https://www.washington.edu/students/crscat/hcde.html#hcde439) (Winter 2023). I'm excited to document my learning more about the hardware & software that makes up the field of physical computing.
 
-![Alex portrait](/assets/portrait.jpg){: width="150" }
+![Alex portrait]({{site.baseurl}}/assets/portrait.jpg){: width="150" }
 
 
 ## Credits
