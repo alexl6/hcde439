@@ -20,7 +20,7 @@ Demo showing the potentiometer controlling LED brightness in opposite directions
 
 The circuit is is powered via USB connected to the Arudino microcontroller. The blue LEDs are connected to pin 3 and 9 respectively. Each LED is connected in series with a 220 Ω resistor to reduce the current through the LED.
 
-The circuit also contains a potentiometer connected to pin A0. A ??? Ω resister is connected in parallel to the analog input pins to limit current through the system.
+The circuit also contains a potentiometer. It is connected to pin A0 and a 330 Ω resister (equivalent of a voltmeter) to limit current through the system.
 
 
 ![Circuit photo]({{site.baseurl}}/assets/hw3_circuit_photo.png){: width="80%"}
