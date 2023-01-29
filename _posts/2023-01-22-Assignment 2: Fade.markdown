@@ -41,7 +41,7 @@ $$
 $$
 
 
-A 220 Ω resister is used for red and green LEDs because these LEDs have a voltage drop of 1.7V. Their resisters' resistance to be at least
+A **220 Ω** resister is used for red and green LEDs because these LEDs have a voltage drop of 1.7V. Their resisters' resistance to be at least
 $$
 \begin{align\*}
   V&=IR\cr
@@ -51,7 +51,7 @@ $$
 \end{align\*}
 $$
 
-A 220 Ω resister is used for the blue LED (voltage drop = 3.3V). It needs an resistor that is at least
+A **220 Ω** resister is used for the blue LED (voltage drop = 3.3V). It needs an resistor that is at least
 $$
 \begin{align\*}
     V&=IR\cr
@@ -62,7 +62,7 @@ $$
 $$
 Using a resistor with higher resistance than what is required here (e.g. a 100 Ω resistor) will not have an adverse effect on the longevity of the LED, it will simply cause it to appear a bit dimmer.
 
-## Arduino code:
+## Arduino code
 {% highlight c %}
 {% raw %}
 // Preprocessor marcos
