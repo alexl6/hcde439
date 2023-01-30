@@ -6,14 +6,18 @@ categories: jekyll update
 ---
 
 ## Demo
+**Sensor calibration**  
+Demo video showing initial sensor calibration on startup. When both LEDs are on, capture the minimum reading from sensor. When both LEDs are off, capture the maximum reading from sensor. Both LEDs flashing together indicates calibration completion.  
 ![Demo video showing initial sensor calibration on startup]({{site.baseurl}}/assets/hw3_calib.gif){: width="75%"}
 
-Demo video showing initial sensor calibration on startup. When both LEDs are on, capture the minimum reading from sensor. When both LEDs are off, capture the maximum reading from sensor. Both LEDs flashing together indicates calibration completion.
 
+**Adjusting brightness**  
+Demo showing the potentiometer controlling LED brightness in opposite directions. Turning the knob counterclockwise increases brightness for the top LED and dims the bottom LED. Turning the knob clockwise dims the top LED and increases power (brightness) for the top LED.  
 ![Demo video for adjusting LED brightness]({{site.baseurl}}/assets/hw3_adjust.gif){: width="75%"}
 
-Demo showing the potentiometer controlling LED brightness in opposite directions. Turning the knob counterclockwise increases brightness for the top LED and dims the bottom LED. Turning the knob clockwise dims the top LED and increases power (brightness) for the top LED.
-
+**Serial communications**  
+Screen capture of data being sent over a serial connection upon initial startup & regular operation.  
+![Screen capture of data being sent over serial connection]({{site.baseurl}}/assets/hw3_terminal.gif){: width="80%"}
 
 ## Circuit drawing
 ![Circuit drawing]({{site.baseurl}}/assets/hw3_circuit.png){: width="80%"}
@@ -27,6 +31,9 @@ The circuit also contains a potentiometer. It is connected to pin A0 and a 330 �
 
 
 ## Calculating resistor values
+
+### LED resistor
+
 Because each LED used in this assignment can operate safely with $\leq 30 \text{mA}$ of current, we need to use resisters to reduce the amount of current going through each LED.
 
 Since we are connecting the resister & the LED in series, the amount of current through the LED is the same as that for the resister ($I_\text{L} = I_\text{r}$). This also means that the sum of voltage drop across the resister and LED should be equal to the voltage provided by the Arduino microcontroller (5V).
@@ -51,8 +58,8 @@ $$
 $$
 Using a resistor with higher resistance than what is required here (e.g. a 100 Ω resistor) will not have an adverse effect on the longevity of the LED, it will simply cause it to appear a bit dimmer.
 
-
-Assuming the analog in port on Arudino is an ideal voltmeter (aka. infinite resistance), the resistor between the potentiometer and ground are effectively connected in series. Because the maximum DC current through the GND pin for the microcontroller is 200 mA, we also need to calculate the minimum resistence for the previously mentioned resistor. Since the ground pin is shared between the LEDs and the potentiometer, we need to consider the worst case scenario where current through the circuit is maximized when the potentiometer's resistance is approximately 0 Ω and both LEDs are on. We first calculate the current through the LEDs. 
+### Potentiometer resistor
+Assuming the analog in port on Arudino is an ideal voltmeter (aka. infinite resistance), the resistor and the potentiometer are effectively connected in series. Because the maximum DC current through the GND pin for the microcontroller is 200 mA, we also need to calculate the minimum resistence for the previously mentioned resistor. Since the ground pin is shared between the LEDs and the potentiometer, we need to consider the worst case scenario where current through the circuit is maximized when the potentiometer's resistance is approximately 0 Ω and both LEDs are on. We first calculate the current through the LEDs. 
 
 $$
 \begin{align\*}
