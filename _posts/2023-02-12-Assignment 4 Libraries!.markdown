@@ -7,8 +7,8 @@ categories: jekyll update
 
 ## Demo
 **Control 8-segement display with IR remote**  
-Demo video for IR remote controlled by IR remote.
-![Demo video showing initial sensor calibration on startup]({{site.baseurl}}/assets/hw4_demo.gif){: width="75%"}
+Demo video for 8-segment display controlled by IR remote.
+![Demo video showing 8-segment display controlled by IR remote]({{site.baseurl}}/assets/hw4_demo.gif){: width="75%"}
 
 ## Circuit drawing
 The IR receiver & 7-segment display are connected to the microcontroller's output pins. Resistors are connected in series with the 7-segment display to limit current.
