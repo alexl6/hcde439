@@ -12,7 +12,7 @@ Demo video showing the joystick controlling a ball on screen that changes color 
 ![Demo video]({{site.baseurl}}/assets/hw6_demo.gif){: width="75%"}
 
 ## Circuit drawing
-The LCD is connected to the microcontroller via digital pins, 5V power, and ground. The pin for its backlight is connected in series to a 220Ω resistor to limit the current through the backlight as suggested by the guide found on Arduino Docs. https://docs.arduino.cc/learn/electronics/lcd-displays
+The LCD is connected to the microcontroller via digital pins, 5V power, and ground. The pin for its backlight is connected in series to a 220Ω resistor to limit the current through the backlight as suggested by the guide found on [Arduino Docs](https://docs.arduino.cc/learn/electronics/lcd-displays).
 
 The joystick is powered by the same 5V pin on Arduino and its two analog output pins are connected to port A0 and A1 for x & y axis respectively.
 
