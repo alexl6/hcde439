@@ -48,8 +48,6 @@ The main challenge of this project is to draw the game graphics on a character L
 
 Each custom character is represented as a bitmap stored in an 8-byte array. A 1 in the bitmap represents a pixel on the LCD. For example, the following array will create a custom character that looks like a paddle on the right side of the screen.
 
-![Bitmap]({{site.baseurl}}/assets/final_bitmap_example.png){: width="20%"}
-
 {% highlight c %}
 {% raw %}
 byte customChar[] = {
@@ -65,25 +63,30 @@ byte customChar[] = {
 {% endraw %}
 {% endhighlight %}
 
-Because the `lcd.createChar()` function will create a custom character based on the first 8 bytes it reads, I can achieve the effect of moving the paddle up/down by changing where the pointer is pointing within the byte array. Because the padle might span across two vertically stacked characters, two custom characters are used per paddle. Finding the right location within the byte array bitmap is handled by `get_paddle_bitmap()`.
+![Bitmap]({{site.baseurl}}/assets/final_bitmap_example.png){: width="20%"}
 
-The ball character is generated in a similar manner using custom characters. Because the ball can move both vertically and horizontally across the entire screen, its content and the location of that character needs to change over time. Everytime the ball character is updated, the program will clear the charater at its previous location, zero out the entire array, then toggle the correct bit to generate the new bitmap. This task is primarily handled by `ball_sprite()`.
 
-As the ball gets closer and close to one of the paddles on screen, it will eventually need to share a custom character with one of the paddles. This is handled by `draw_merge_sprite()` that 'copies' the paddle bitmap and merge it with the ball sprite before drawing it.
+In my implementation, I used a longer array with more zero bytes at the beginning & the end of this array. Because `lcd.createChar()` expects a pointer to a memory location where the next 8 bytes are interpreted as the bitmap for the custom character, I can achieve the effect of moving the paddle up/down by changing where the pointer in pointing within the large byte array. This effectively changes the 'viewport' (custom character) to make static paddle appear as if it is moving. Because the padle might span across two vertically stacked characters, two custom characters are used per paddle. These characters share the same large bitmap byte array, but they are looking at it from two different viewports. This task of finding the right location within the byte array bitmap is handled and abstracted by `get_paddle_bitmap()`.
+
+The left & right paddles share the same base bitmap. The 1's are simply shifted to the other side when needed.
+
+The ball character is generated in a similar manner using custom characters. Because the ball can move both vertically and horizontally across the entire screen, its content and the location of that character needs to change over time. Everytime the ball character is updated, the program will clear the charater at its previous location, zero out the entire array, then toggle the correct bit to generate the new bitmap (with some basic bitwise operations). This task is primarily handled by `ball_sprite()`.
+
+As the ball gets closer and close to one of the paddles on screen, it will eventually need to share a custom character with one of the paddles. The `render()` function will check for that and call `draw_merge_sprite()` when needed. The function 'copies' the paddle bitmap and merge it with the ball sprite (bitwise OR) before drawing it.
 
 ### Game simulation
 The game simulation code simlates a _Pong_ game (it is not physically accurate, however). It reads in player input from the joystick, updates the paddles on screen, and moves the ball around the screen. While the graphics code supports letting the ball move in any direction, I decided to limit it to diagnal motion (45 degrees) after testing the actual display's clarity & responsiveness with different motion patterns. The pong ball will bounce and change direction if it hits the top/bottom wall or a player controlled paddle. The progam delay at the end of `run_session()` dictates the game speed.
 
 To improve playability, each paddle is 1 pixel wider in the game logic than it appears on-screen. This is done to compensate the 'ghosting' effect of the LCD character display, and it also makes the game feel easier & more forgiving to the players. Because the ball always move in 45 degrees angle, it will also help make the game look more 'visually correct'.
 
-The game runs at just over 10 fps (frames per second) as determined by the program delay. The main limiting factor is the character LCD as opposed to the software. In my testing, the poor pixel response time makes it very difficult to see the moving ball and paddles if I attempt to run the game at a faster speed. I might be able to resolve this by improving the ball drawing code, but a hardware upgrade to an OLED screen would yield a much more significant improvement. 
+The game runs at just over 10 fps (frames per second) as determined by the program delay. The main limiting factor is the character LCD as opposed to the software. In my testing, the poor pixel response time makes it very difficult to see the moving ball and paddles if I attempt to run the game at a faster speed. I might be able to improve this by optimizing the ball drawing code to avoid clearing the character previously contained the ball as much as possible, but I think a hardware upgrade to an OLED screen would yield a much more significant improvement to the graphical fidelity & game responsiveness for the end user. 
 
 
 ## Demo video
 ![]({{site.baseurl}}/assets/final_demo.mp4)
 
 
-## Arduino code
+## Full Arduino source code
 {% highlight c %}
 {% raw %}
 // Include external libraries
@@ -126,7 +129,7 @@ byte ball[8] = {
 };
 
 // Source bitmap for paddle sprite
-byte paddle_src[17] = {
+byte paddle_src[19] = {
   0b00000,
   0b00000,
   0b00000,
@@ -143,7 +146,9 @@ byte paddle_src[17] = {
   0b00000,
   0b00000,
   0b00000,
-  0b00000
+  0b00000,
+  0b00000,
+  0b00000,
 };
 
 // Struct for holding the two byte pointers pointing to the location to represent
