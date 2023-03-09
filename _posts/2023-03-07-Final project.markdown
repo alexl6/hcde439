@@ -31,7 +31,7 @@ View of the circuit mounted inside the box
 
 Final product with mounted joysticks & LCD
 
-![Final product with mounted joysticks & LCD]({{site.baseurl}}/assets/final_circuit_photo2.png){: width="70%"}
+![Final product with mounted joysticks & LCD]({{site.baseurl}}/assets/final_circuit_photo3.png){: width="70%"}
 
 
 ## Software implementation
