@@ -1,4 +1,10 @@
-# Project page for HCDE 439 Physical Computing Winter 2023
+## Archived repository
+
+📦 This repository has been archived
+
+[🔗 View project website](https://alexl6.github.io/hcde439)
+
+## Project page for HCDE 439 Physical Computing Winter 2023
 
 **Instructor:** Nadya Peek
 
