@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Assignment 3: I/O (Input/Output)! | HCDE 439 - Alex</title>
+<meta name="generator" content="Jekyll v4.3.1">
+<meta property="og:title" content="Assignment 3: I/O (Input/Output)!">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Demo Sensor calibration Demo video showing initial sensor calibration on startup. When both LEDs are on, capture the minimum reading from sensor. When both LEDs are off, capture the maximum reading from sensor. Both LEDs flashing together indicates calibration completion.">
+<meta property="og:description" content="Demo Sensor calibration Demo video showing initial sensor calibration on startup. When both LEDs are on, capture the minimum reading from sensor. When both LEDs are off, capture the maximum reading from sensor. Both LEDs flashing together indicates calibration completion.">
+<link rel="canonical" href="alexl6.github.io/hcde439/jekyll/update/2023/01/29/Assignment-3-IO.html">
+<meta property="og:url" content="alexl6.github.io/hcde439/jekyll/update/2023/01/29/Assignment-3-IO.html">
+<meta property="og:site_name" content="HCDE 439 - Alex">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-01-29T01:23:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Assignment 3: I/O (Input/Output)!">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-01-29T01:23:00+00:00","datePublished":"2023-01-29T01:23:00+00:00","description":"Demo Sensor calibration Demo video showing initial sensor calibration on startup. When both LEDs are on, capture the minimum reading from sensor. When both LEDs are off, capture the maximum reading from sensor. Both LEDs flashing together indicates calibration completion.","headline":"Assignment 3: I/O (Input/Output)!","mainEntityOfPage":{"@type":"WebPage","@id":"alexl6.github.io/hcde439/jekyll/update/2023/01/29/Assignment-3-IO.html"},"url":"alexl6.github.io/hcde439/jekyll/update/2023/01/29/Assignment-3-IO.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/hcde439/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="alexl6.github.io/hcde439/feed.xml" title="HCDE 439 - Alex">
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/hcde439/">HCDE 439 - Alex</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/hcde439/about/">About</a></div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Assignment 3: I/O (Input/Output)!</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2023-01-29T01:23:00+00:00" itemprop="datePublished">Jan 29, 2023
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="demo">Demo</h2>
+<p><strong>Sensor calibration</strong><br>
+Demo video showing initial sensor calibration on startup. When both LEDs are on, capture the minimum reading from sensor. When both LEDs are off, capture the maximum reading from sensor. Both LEDs flashing together indicates calibration completion.<br>
+<img src="/hcde439/assets/hw3_calib.gif" alt="Demo video showing initial sensor calibration on startup" width="75%"></p>
+
+<p><strong>Adjusting brightness</strong><br>
+Demo showing the potentiometer controlling LED brightness in opposite directions. Turning the knob counterclockwise increases brightness for the top LED and dims the bottom LED. Turning the knob clockwise dims the top LED and increases power (brightness) for the top LED.<br>
+<img src="/hcde439/assets/hw3_adjust.gif" alt="Demo video for adjusting LED brightness" width="75%"></p>
+
+<p><strong>Serial communications</strong><br>
+Screen capture of data being sent over a serial connection upon initial startup &amp; regular operation.<br>
+<img src="/hcde439/assets/hw3_terminal.gif" alt="Screen capture of data being sent over serial connection" width="80%"></p>
+
+<h2 id="circuit-drawing">Circuit drawing</h2>
+<p><img src="/hcde439/assets/hw3_circuit.png" alt="Circuit drawing" width="80%"></p>
+
+<p>The circuit is is powered via USB connected to the Arudino microcontroller. The blue LEDs are connected to pin 3 and 9 respectively. Each LED is connected in series with a 220 Ω resistor to reduce the current through the LED.</p>
+
+<p>The circuit also contains a potentiometer. It is connected to pin A0 and a 330 Ω resister (equivalent of a voltmeter) to limit current through the system.</p>
+
+<p><img src="/hcde439/assets/hw3_circuit_photo.png" alt="Circuit photo" width="80%"></p>
+
+<h2 id="calculating-resistor-values">Calculating resistor values</h2>
+
+<h3 id="led-resistor">LED resistor</h3>
+
+<p>Because each LED used in this assignment can operate safely with $\leq 30 \text{mA}$ of current, we need to use resisters to reduce the amount of current going through each LED.</p>
+
+<p>Since we are connecting the resister &amp; the LED in series, the amount of current through the LED is the same as that for the resister ($I_\text{L} = I_\text{r}$). This also means that the sum of voltage drop across the resister and LED should be equal to the voltage provided by the Arduino microcontroller (5V).</p>
+
+<p>With these information, we calculate the minimum resistance by applying Ohm’s law on the resister.
+$$
+\begin{align*}
+  V_\text{r} &amp;= I_\text{r} R_\text{r} &amp;&amp; \text{Ohm’s law}\cr
+  V_\text{PSU} - V_\text{L} &amp;= I_\text{L} R_\text{r} &amp;&amp;\text{Substitute resister V &amp; I}\cr
+  5\texttt{V} - V_\text{L} &amp;= 20\texttt{mA} \cdot R_\text{r}\cr
+\end{align*}
+$$</p>
+
+<p>A <strong>220 Ω</strong> resister is used for the blue LED (voltage drop = 3.3V). It needs an resistor that is at least
+$$
+\begin{align*}
+    V&amp;=IR\cr
+    5\;\texttt{V} - 3.3\;\texttt{V} &amp;=20\;\texttt{mA} \cdot \textrm{R}\cr
+    \frac{1.7\;\texttt{V}}{0.02\;\texttt{A}} &amp;= \textrm{R}\cr
+    \textrm{R} &amp;= 85 \;\Omega
+\end{align*}
+$$
+Using a resistor with higher resistance than what is required here (e.g. a 100 Ω resistor) will not have an adverse effect on the longevity of the LED, it will simply cause it to appear a bit dimmer.</p>
+
+<h3 id="potentiometer-resistor">Potentiometer resistor</h3>
+<p>Assuming the analog in port on Arudino is an ideal voltmeter (aka. infinite resistance), the resistor and the potentiometer are effectively connected in series. Because the maximum DC current through the GND pin for the microcontroller is 200 mA, we also need to calculate the minimum resistence for the previously mentioned resistor. Since the ground pin is shared between the LEDs and the potentiometer, we need to consider the worst case scenario where current through the circuit is maximized when the potentiometer’s resistance is approximately 0 Ω and both LEDs are on. We first calculate the current through the LEDs.</p>
+
+<p>$$
+\begin{align*}
+  V &amp;= IR &amp;&amp;\text{Ohm’s law}\cr
+  I &amp;= \frac{V}{R}\cr
+  I &amp;= \frac{5\texttt{V}-3.3\texttt{V}}{220\Omega} &amp;&amp;\text{Substitution}\cr
+  I &amp;\approx 7.8 mA &amp;&amp;\text{Round up for worst-case scenario}
+\end{align*}
+$$</p>
+
+<p>Because each LED and the potentio meter are connected in parallel, we can then determine that</p>
+
+<p>$$
+\begin{align*}
+  I_\text{max} &amp;&gt; I_\text{LED} \cdot 2 + I_\text{pot}\cr
+  200 \texttt{mA} &amp;&gt; 7.8 \texttt{mA} \cdot 2 + I_\text{pot}\cr
+  I_\text{pot} &amp;&lt; 184.4 \texttt{mA}
+\end{align*}
+$$</p>
+
+<p>In the worst case with potentiometer having 0 Ω, the minimum resistance for the other resistor is:
+$$
+\begin{align*}
+   V &amp;= I R &amp;&amp; \text{Ohm’s law}\cr
+   5 \texttt{V} &amp;= 184.4 \texttt{mA} \cdot R &amp;&amp;\text{Substitue V &amp; I}\cr
+   R &amp;= \frac{5\texttt{V}}{0.1844\texttt{A}}\cr
+   R &amp;\approx 28 \;\Omega
+\end{align*}
+$$</p>
+
+<p>Considering that other on-board devices might be sharing the ground pin under the hood, I decided to be extra cautious and use a <strong>330 Ω</strong>  resistor.</p>
+
+<h2 id="arduino-code">Arduino code</h2>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="c1">// Preprocessor macros</span>
+<span class="cp">#define LED1_PIN 3  // Bottom LED
+#define LED2_PIN 9  // Top LED
+#define NUM_LEDS 2  // # of LEDs
+</span>
+<span class="cp">#define SENSOR_PIN A0 // Analog sensor port (potentiometer)
+</span>
+
+<span class="c1">// Global variables</span>
+<span class="c1">// Loop variable</span>
+<span class="kt">uint8_t</span> <span class="n">i</span><span class="p">;</span>
+<span class="c1">// Temporarily saves sensor readings</span>
+<span class="kt">long</span> <span class="n">sensor_val</span><span class="p">;</span>
+<span class="c1">// Stores sensor reading for reuse</span>
+<span class="kt">long</span> <span class="n">sensor_max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    <span class="c1">// Initial max sensor value</span>
+<span class="kt">long</span> <span class="n">sensor_min</span> <span class="o">=</span> <span class="mi">1023</span><span class="p">;</span> <span class="c1">// Initial min sensor value</span>
+
+<span class="c1">// Array of LEDs in the system</span>
+<span class="kt">uint8_t</span> <span class="n">LEDs</span><span class="p">[</span><span class="n">NUM_LEDS</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">LED1_PIN</span><span class="p">,</span> <span class="n">LED2_PIN</span><span class="p">};</span>
+
+
+<span class="c1">// Helper functions</span>
+<span class="c1">// Synchronize all LEDs to either ON or OFF state</span>
+<span class="kt">void</span> <span class="nf">sync_led</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">L</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">num</span><span class="p">,</span> <span class="n">bool</span> <span class="n">state</span><span class="p">);</span>
+
+
+<span class="c1">// Setup code, run once</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Set all used pins to output mode</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">LED1_PIN</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>  <span class="c1">// Set top LED to output mode</span>
+  <span class="n">pinMode</span><span class="p">(</span><span class="n">LED2_PIN</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>  <span class="c1">// Set bottom LED to output mode</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>         <span class="c1">// Set up serial connection</span>
+
+  <span class="c1">// Calibrate min input</span>
+  <span class="c1">// Light up all LEDs to indicate the system is measuring min input</span>
+  <span class="n">sync_led</span><span class="p">(</span><span class="n">LEDs</span><span class="p">,</span> <span class="n">NUM_LEDS</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+  <span class="c1">// Print text to terminal</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Calibrating min:</span><span class="se">\t</span><span class="s">"</span><span class="p">);</span>
+
+  <span class="c1">// Take 10 measurements</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
+    <span class="n">sensor_val</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">SENSOR_PIN</span><span class="p">);</span>  <span class="c1">// Save reading to temp variable</span>
+    <span class="c1">// Update minimum if the measured value is less than the known minimum</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">sensor_val</span> <span class="o">&lt;</span> <span class="n">sensor_min</span><span class="p">)</span>
+      <span class="n">sensor_min</span> <span class="o">=</span> <span class="n">sensor_val</span><span class="p">;</span>
+    
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">sensor_min</span><span class="p">);</span> <span class="c1">// Print the obtained value</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="sc">'\t'</span><span class="p">);</span>       <span class="c1">// insert tab character for spacing</span>
+    <span class="c1">// Delay to allow the user some time to generate the min sensor reading</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// Print out the finalized min sensor reading</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Finalized min:</span><span class="se">\t</span><span class="s">"</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">sensor_min</span><span class="p">);</span>
+
+  <span class="c1">// Calibrate max input</span>
+  <span class="c1">// Turn all LEDs off to indicate the system is measuring max input</span>
+  <span class="n">sync_led</span><span class="p">(</span><span class="n">LEDs</span><span class="p">,</span> <span class="n">NUM_LEDS</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+  <span class="c1">// Print text to terminal</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Calibrating max:</span><span class="se">\t</span><span class="s">"</span><span class="p">);</span>
+
+  <span class="c1">// Take 10 measurements</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
+    <span class="n">sensor_val</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">SENSOR_PIN</span><span class="p">);</span>    <span class="c1">// Save reading to temp variable</span>
+    <span class="c1">// Update maximum if the measured value is greater than the known maximum</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">sensor_val</span> <span class="o">&gt;</span> <span class="n">sensor_max</span><span class="p">)</span>
+      <span class="n">sensor_max</span> <span class="o">=</span> <span class="n">sensor_val</span><span class="p">;</span>  <span class="c1">// Print the obtained value</span>
+    
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">sensor_max</span><span class="p">);</span>   <span class="c1">// insert tab character for spacing</span>
+    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="sc">'\t'</span><span class="p">);</span>         <span class="c1">// insert tab character for spacing</span>
+    <span class="c1">// Delay to allow the user some time to generate the min sensor reading</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">// Print out the finalized max sensor reading</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Finalized max:</span><span class="se">\t</span><span class="s">"</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">sensor_max</span><span class="p">);</span>
+
+  <span class="c1">// Blink the LEDs for a few times to indicate end of calibration</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span> <span class="c1">// Loop</span>
+    <span class="n">sync_led</span><span class="p">(</span><span class="n">LEDs</span><span class="p">,</span> <span class="n">NUM_LEDS</span><span class="p">,</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">);</span>  <span class="c1">// Change LED state on every iteration</span>
+    <span class="n">delay</span><span class="p">(</span><span class="mi">300</span><span class="p">);</span> <span class="c1">// Delay to make the blinking noticable</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Infinite loop: Interactive code</span>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Read from potentiometer value</span>
+  <span class="n">sensor_val</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">SENSOR_PIN</span><span class="p">);</span>
+
+  <span class="c1">// Prints raw value from the potentiometer</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">"Raw sensor reading: "</span><span class="p">);</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+
+  <span class="c1">// Limit sensor value to prevent overflow (after mapping to LED range)</span>
+  <span class="n">sensor_val</span> <span class="o">=</span> <span class="n">constrain</span><span class="p">(</span><span class="n">sensor_val</span><span class="p">,</span> <span class="n">sensor_min</span><span class="p">,</span> <span class="n">sensor_max</span><span class="p">);</span>
+
+  <span class="c1">// Map sensor reading to bottom LED</span>
+  <span class="n">analogWrite</span><span class="p">(</span><span class="n">LED1_PIN</span><span class="p">,</span> <span class="n">map</span><span class="p">(</span><span class="n">sensor_val</span><span class="p">,</span> <span class="n">sensor_min</span><span class="p">,</span> <span class="n">sensor_max</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">));</span>
+  <span class="c1">// Map sensor reading to top LED (inverse)</span>
+  <span class="n">analogWrite</span><span class="p">(</span><span class="n">LED2_PIN</span><span class="p">,</span> <span class="n">map</span><span class="p">(</span><span class="n">sensor_val</span><span class="p">,</span> <span class="n">sensor_min</span><span class="p">,</span> <span class="n">sensor_max</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+  
+  <span class="c1">// Add some delay between reads</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+<span class="c1">// Helper function implementation</span>
+<span class="c1">// </span>
+<span class="cm">/**
+ * Synchronize all LEDs to either ON or OFF state
+ * 
+ * @param l Pointer to array of LEDs (output port)
+ * @param num: number of LEDs in array l
+ * @param state: either HIGH (1) or LOW (0)
+*/</span>
+<span class="kt">void</span> <span class="nf">sync_led</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">L</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">num</span><span class="p">,</span> <span class="n">bool</span> <span class="n">state</span><span class="p">){</span>
+  <span class="c1">// Loop through the array</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">uint8_t</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="n">L</span><span class="p">;</span> <span class="n">ptr</span> <span class="o">&lt;</span> <span class="n">L</span> <span class="o">+</span> <span class="n">num</span><span class="p">;</span> <span class="o">++</span><span class="n">ptr</span><span class="p">){</span>
+    <span class="c1">// Individually toggle the state of each LED</span>
+    <span class="n">digitalWrite</span><span class="p">(</span><span class="o">*</span><span class="n">ptr</span><span class="p">,</span> <span class="n">state</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+  </div>
+<a class="u-url" href="/hcde439/jekyll/update/2023/01/29/Assignment-3-IO.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/hcde439/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">HCDE 439 - Alex</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">HCDE 439 - Alex</li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li><a href="https://github.com/alexl6"><svg class="svg-icon"><use xlink:href="/hcde439/assets/minima-social-icons.svg#github"></use></svg> <span class="username">alexl6</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Alex's site for HCDE 439: Physical Computing projects (Winter 2023). Site generated by Jekyll.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

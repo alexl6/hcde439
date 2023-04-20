@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Assignment 4: Libraries! | HCDE 439 - Alex</title>
+<meta name="generator" content="Jekyll v4.3.1">
+<meta property="og:title" content="Assignment 4: Libraries!">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Demo Control 8-segement display with IR remote Demo video for 8-segment display controlled by IR remote.">
+<meta property="og:description" content="Demo Control 8-segement display with IR remote Demo video for 8-segment display controlled by IR remote.">
+<link rel="canonical" href="alexl6.github.io/hcde439/jekyll/update/2023/02/13/Assignment-4-Libraries!.html">
+<meta property="og:url" content="alexl6.github.io/hcde439/jekyll/update/2023/02/13/Assignment-4-Libraries!.html">
+<meta property="og:site_name" content="HCDE 439 - Alex">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2023-02-13T07:26:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Assignment 4: Libraries!">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-02-13T07:26:00+00:00","datePublished":"2023-02-13T07:26:00+00:00","description":"Demo Control 8-segement display with IR remote Demo video for 8-segment display controlled by IR remote.","headline":"Assignment 4: Libraries!","mainEntityOfPage":{"@type":"WebPage","@id":"alexl6.github.io/hcde439/jekyll/update/2023/02/13/Assignment-4-Libraries!.html"},"url":"alexl6.github.io/hcde439/jekyll/update/2023/02/13/Assignment-4-Libraries!.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/hcde439/assets/main.css">
+<link type="application/atom+xml" rel="alternate" href="alexl6.github.io/hcde439/feed.xml" title="HCDE 439 - Alex">
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+<a class="site-title" rel="author" href="/hcde439/">HCDE 439 - Alex</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/hcde439/about/">About</a></div>
+      </nav>
+</div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Assignment 4: Libraries!</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2023-02-13T07:26:00+00:00" itemprop="datePublished">Feb 13, 2023
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="demo">Demo</h2>
+<p><strong>Control 8-segement display with IR remote</strong><br>
+Demo video for 8-segment display controlled by IR remote.
+<img src="/hcde439/assets/hw4_demo.gif" alt="Demo video showing 8-segment display controlled by IR remote" width="75%"></p>
+
+<h2 id="circuit-drawing">Circuit drawing</h2>
+<p>The IR receiver &amp; 7-segment display are connected to the microcontroller’s output pins. Resistors are connected in series with the 7-segment display to limit current.
+<img src="/hcde439/assets/hw4_circuit.png" alt="Circuit drawing" width="80%"></p>
+
+<p>The circuit is is powered via USB connected to the Arudino microcontroller.</p>
+
+<p><img src="/hcde439/assets/hw4_circuit_photo.png" alt="Circuit photo" width="80%"></p>
+
+<h2 id="calculating-resistor-values">Calculating resistor values</h2>
+
+<h3 id="7-segment-display-led-resistor">7-segment display LED resistor</h3>
+
+<p>Because each red LED that makes up the 7 segments can operate safely within $\leq 30 \text{mA}$ of current, we need to use resisters to reduce the amount of current going through each LED.</p>
+
+<p>Since we are connecting the resister &amp; the LED in series, the amount of current through the LED is the same as that for the resister ($I_\text{L} = I_\text{r}$). This also means that the sum of voltage drop across the resister and LED should be equal to the voltage provided by the Arduino microcontroller (5V).</p>
+
+<p>With these information, we calculate the minimum resistance by applying Ohm’s law on the resister.
+$$
+\begin{align*}
+  V_\text{r} &amp;= I_\text{r} R_\text{r} &amp;&amp; \text{Ohm’s law}\cr
+  V_\text{PSU} - V_\text{L} &amp;= I_\text{L} R_\text{r} &amp;&amp;\text{Substitute resister V &amp; I}\cr
+  5\texttt{V} - V_\text{L} &amp;= 20\texttt{mA} \cdot R_\text{r}\cr
+\end{align*}
+$$</p>
+
+<p>A <strong>220 Ω</strong> resister is used for the red LEDs because these LEDs have a voltage drop of 1.7V. Their resisters’ resistance to be at least
+$$
+\begin{align*}
+  V&amp;=IR\cr
+  5\;\texttt{V} - 1.7\;\texttt{V} &amp;=20\;\texttt{mA} \cdot \textrm{R}\cr
+  \frac{3.3\;\texttt{V}}{0.02\;\texttt{A}} &amp;= \textrm{R}\cr
+  \textrm{R} &amp;= 165 \;\Omega
+\end{align*}
+$$</p>
+
+<p>Using a resistor with higher resistance than what is required here will not have an adverse effect on the longevity of the LED, it will simply cause it to appear a bit dimmer.</p>
+
+<h2 id="arduino-code">Arduino code</h2>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="c1">// Include external libraries</span>
+<span class="cp">#include</span> <span class="cpf">&lt;Arduino.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;IRremote.hpp&gt;</span><span class="c1">   // IR receiver library</span><span class="cp">
+#include</span> <span class="cpf">&lt;SevenSegmentDisplay.h&gt;</span><span class="c1">  // 7-segment display library</span><span class="cp">
+</span>
+<span class="c1">// Preprocessor macros for input and output pin etc.</span>
+<span class="cp">#define IR_RECEIVE_PIN 2  // IR receiver pin
+#define DECODE_NEC        // Use NEC decode for IR signal
+</span>
+<span class="c1">// Define LED pins for each LED in 7-segment display</span>
+<span class="cp">#define PIN_DP 5
+#define PIN_C 12
+#define PIN_D 11
+#define PIN_E 10
+#define PIN_B 9
+#define PIN_A 8
+#define PIN_F 7
+#define PIN_G 6
+</span>
+<span class="c1">// Define number of LEDs</span>
+<span class="cp">#define NUM_LEDS 8
+</span>
+<span class="c1">// Array of LED pins</span>
+<span class="kt">uint8_t</span> <span class="n">LEDs</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">PIN_DP</span><span class="p">,</span> <span class="n">PIN_C</span><span class="p">,</span> <span class="n">PIN_D</span><span class="p">,</span> <span class="n">PIN_E</span><span class="p">,</span> <span class="n">PIN_B</span><span class="p">,</span> <span class="n">PIN_A</span><span class="p">,</span> <span class="n">PIN_F</span><span class="p">,</span> <span class="n">PIN_G</span> <span class="p">};</span>
+
+<span class="c1">// Shared int pointer for loops</span>
+<span class="kt">uint8_t</span><span class="o">*</span> <span class="n">ptr</span><span class="p">;</span>
+
+<span class="c1">// Variable to store decoded button value</span>
+<span class="c1">// val == -1 if the button is not a number</span>
+<span class="kt">uint8_t</span> <span class="n">val</span><span class="p">;</span>
+
+<span class="c1">// Define a seven segment display</span>
+<span class="n">SevenSegmentDisplay</span> <span class="nf">screen</span><span class="p">(</span><span class="n">PIN_A</span><span class="p">,</span> <span class="n">PIN_B</span><span class="p">,</span> <span class="n">PIN_C</span><span class="p">,</span> <span class="n">PIN_D</span><span class="p">,</span> <span class="n">PIN_E</span><span class="p">,</span> <span class="n">PIN_F</span><span class="p">,</span><span class="n">PIN_G</span><span class="p">,</span> <span class="n">PIN_DP</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+
+<span class="c1">// Setup code, run once</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Initialize Serial communications</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+  <span class="c1">// Initialize all LED pins to output mode</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">ptr</span> <span class="o">=</span> <span class="n">LEDs</span><span class="p">;</span> <span class="n">ptr</span> <span class="o">&lt;</span> <span class="n">LEDs</span> <span class="o">+</span> <span class="n">NUM_LEDS</span><span class="p">;</span> <span class="o">++</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">pinMode</span><span class="p">(</span><span class="o">*</span><span class="n">ptr</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>  <span class="c1">// Set a single pin to output mode</span>
+  <span class="p">}</span>
+  <span class="c1">// Start the receiver and if not 3 parameter specified, take LED_BUILTIN pin from the internal boards definition as default feedback LED</span>
+  <span class="n">IrReceiver</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="n">IR_RECEIVE_PIN</span><span class="p">,</span> <span class="n">ENABLE_LED_FEEDBACK</span><span class="p">);</span>
+  <span class="c1">// Print ready prompt to terminal</span>
+  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s">"Ready to receive IR signals of protocols: "</span><span class="p">));</span>
+  <span class="n">printActiveIRProtocols</span><span class="p">(</span><span class="o">&amp;</span><span class="n">Serial</span><span class="p">);</span>    <span class="c1">// Print active IR protocol used</span>
+<span class="p">}</span>
+
+
+<span class="c1">// Interactive code, infinite loop</span>
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Check for received data &amp; attempt to decode</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">IrReceiver</span><span class="p">.</span><span class="n">decode</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">// Process if the received </span>
+    <span class="k">if</span><span class="p">(</span><span class="n">IrReceiver</span><span class="p">.</span><span class="n">decodedIRData</span><span class="p">.</span><span class="n">protocol</span> <span class="o">==</span> <span class="n">NEC</span><span class="p">){</span>
+      <span class="c1">// Attempt to match the received command into a number button</span>
+      <span class="c1">// If a received command can be mapped to a number on the remote,</span>
+      <span class="c1">// set val to that number</span>
+      <span class="k">switch</span><span class="p">(</span><span class="n">IrReceiver</span><span class="p">.</span><span class="n">decodedIRData</span><span class="p">.</span><span class="n">command</span><span class="p">){</span>
+        <span class="k">case</span> <span class="mh">0x16</span><span class="p">:</span>  <span class="c1">// Case for button 0</span>
+          <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mh">0xC</span><span class="p">:</span>   <span class="c1">// Case for button 1</span>
+          <span class="n">val</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mh">0x18</span><span class="p">:</span>  <span class="c1">// .....</span>
+          <span class="n">val</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mh">0x5E</span><span class="p">:</span>
+          <span class="n">val</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mh">0x8</span><span class="p">:</span>
+          <span class="n">val</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mh">0x1C</span><span class="p">:</span>
+          <span class="n">val</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mh">0x5A</span><span class="p">:</span>
+          <span class="n">val</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mh">0x42</span><span class="p">:</span>
+          <span class="n">val</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mh">0x52</span><span class="p">:</span>
+          <span class="n">val</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="mh">0x4A</span><span class="p">:</span>  <span class="c1">// Case for button 9</span>
+          <span class="n">val</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="nl">default:</span>  <span class="c1">// Default case: handles other buttons</span>
+          <span class="n">val</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c1">// Only update the seven segement display if button was a number</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">){</span>
+        <span class="c1">// Update the 7 segment display</span>
+        <span class="n">screen</span><span class="p">.</span><span class="n">displayCharacter</span><span class="p">(</span><span class="n">val</span> <span class="o">+</span> <span class="sc">'0'</span><span class="p">);</span>
+        <span class="c1">// Print raw IR data to terminal</span>
+        <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">IrReceiver</span><span class="p">.</span><span class="n">decodedIRData</span><span class="p">.</span><span class="n">decodedRawData</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// Resume IR data receive</span>
+    <span class="n">IrReceiver</span><span class="p">.</span><span class="n">resume</span><span class="p">();</span> <span class="c1">// Enable receiving of the next value</span>
+  <span class="p">}</span>
+  <span class="c1">// Program loop delay</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+  </div>
+<a class="u-url" href="/hcde439/jekyll/update/2023/02/13/Assignment-4-Libraries!.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/hcde439/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">HCDE 439 - Alex</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">HCDE 439 - Alex</li>
+</ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+<ul class="social-media-list"><li><a href="https://github.com/alexl6"><svg class="svg-icon"><use xlink:href="/hcde439/assets/minima-social-icons.svg#github"></use></svg> <span class="username">alexl6</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Alex's site for HCDE 439: Physical Computing projects (Winter 2023). Site generated by Jekyll.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
